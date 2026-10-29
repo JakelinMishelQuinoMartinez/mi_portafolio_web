@@ -1,162 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaki's Portafolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Jakelin Quino, Técnica en Desarrollo de Software, desarrolladora backend y full stack.">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('tema')||'dark'}catch(e){}</script>
+  <title>Jakelin Quino | Desarrolladora de Software</title>
+  <!-- Fuentes: Fraunces (nombre), Inter (texto), JetBrains Mono (terminal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Iconos de tecnologías (Devicon) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <hr class="total_line">
-        <h1 class="harder_title">PORTAFOLIO</h1>
-        <h2 class="harder_subtitle">Jakelin Mishel Quino Martínez</h2>
-        <nav class="nav">
-            <ul class="nav_list">
-                <li class="nav_item"><a class="nav_link" href="#inicio">Inicio</a></li>
-                <li class="nav_item"><a class="nav_link" href="#sobremi">Sobre mi</a></li>
-                <li class="nav_item"><a class="nav_link" href="#habilidades">Habilidades</a></li>
-                <li class="nav_item"><a class="nav_link" href="#proyectos">Proyectos</a></li>
-                <li class="nav_item"><a class="nav_link" href="#contacto">Contacto</a></li>
-                <a calss="flecha" href="#inicio"><button type="button" >Regresar al Inicio</button></a>
-            </ul>
-        </nav>
-        <hr class="total_line">
-    </header>
+  <div class="progress" id="progress"></div>
 
-    <main class="main">
-        <section id="inicio">
-            <article class="presentacion">
-                <h1 class="bienvenidos">.✦ ݁˖ BIENVENIDOS .✦ ݁˖</h1>
-                <p class="text_cargo">✦ Desarrolladora web en formación ✦</p>
-                <p class="text_perfil">Comprometida con la enseñanza y el aprendizaje</p>
-                <p class="frase">⟢ "Aprender para entender, entender para ayudar" ⟢</p>
-                <img class="img_avatar" src="multimedia/MyAvatar.png" alt="Avatar de Jakelin">
-            </article>
-        </section>
+  <!-- Navegación -->
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Inicio">&gt; jaki<span class="cursor"></span></a>
+    <!-- Cambiar entre modo oscuro y claro -->
+    <button class="icon-btn" id="tema" aria-label="Cambiar tema">☀</button>
+    <button class="menu-btn" id="menu" aria-label="Abrir menú">☰</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobremi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-        <section id="sobremi">
-            <article class="informacion">
-                <h1 class="title_sobremi">.✦ ݁˖ Sobre Mi.✦ ݁˖ </h1>
-                <p class="frase_sobremi">Soy estudiante de programación</p>
-                <h2 class="interes">Área de Interés</h2>
-                <p class="area_text">Desarrollo web y Ciberseguridad</p>
-                <h2 class="hobbies">Mis Gustos</h2>
-                <div class="imagenes_gustos">
-                    <figure class="hobby_item">
-                        <img class="img_gustos" src="multimedia/Senderismo.jpg" alt="Imagen de Senderismo">
-                        <figcaption class="hobby_text">Senderismo</figcaption>
-                    </figure>
-                    <figure class="hobby_item">
-                        <img class="img_gustos" src="multimedia/Fotografía.png" alt="Imagen de Cámara">
-                        <figcaption class="hobby_text">Fotografía</figcaption>
-                    </figure>
-                    <figure class="hobby_item">
-                        <img class="img_gustos" src="multimedia/Programando.jpg" alt="Imagen programando">
-                        <figcaption class="hobby_text">Programación</figcaption>
-                    </figure>
-                    <figure class="hobby_item">
-                        <img class="img_gustos" src="multimedia/Gato.png" alt="Imagen de gato">
-                        <figcaption class="hobby_text">Gatos</figcaption>
-                    </figure>
-                    <figure class="hobby_item">
-                        <img class="img_gustos" src="multimedia/Bosque.jpg" alt="Imagen de bosque">
-                        <figcaption class="hobby_text">Naturaleza</figcaption>
-                    </figure>
-                </div>
-            </article>
-        </section>
-
-        <section id="habilidades">
-            <h1 class="title_habilidades">.✦ ݁˖ Habilidades.✦ ݁˖ </h1>
-            <div class="contenedor_skills">
-                <article class="soft_skills">
-                    <h2 class="title_skills">SOFT SKILLS</h2>
-                    <h3 class="skill_item">Aprendizaje continuo</h3>
-                    <h3 class="skill_item">Solución de problemas</h3>
-                    <h3 class="skill_item">Trabajo en equipo</h3>
-                    <h3 class="skill_item">Adaptabilidad</h3>
-                    <h3 class="skill_item">Empatía</h3>
-                </article>
-                <article class="hard_skills">
-                    <h2 class="title_skills">HARD SKILLS</h2>
-                    <h3 class="skill_item">Python</h3>
-                    <h3 class="skill_item">SCRUM</h3>
-                    <h3 class="skill_item">Git</h3>
-                    <h3 class="skill_item">GitHub</h3>
-                    <h3 class="skill_item">HTML</h3>
-                    <h3 class="skill_item">CSS</h3>  
-                    <h3 class="skill_item">B1 en Inglés</h3>
-                </article>
-            </div>
-        </section>
-
-        <section id="proyectos">
-            <h1 class="title_proyectos">.✦ ݁˖ Proyectos.✦ ݁˖ </h1>
-            <div class="contenedor_proyectos">
-                <article class="proyecto_uno">
-                    <h2 class="subtitulo_proyecto">Proyecto 1: Administrador de inventario</h2>
-                    <a href="https://github.com/JakelinMishelQuinoMartinez/Taller-2--PY">
-                        <img class="img_proyecto" src="multimedia/Tienda.jpg" alt="Imagen de Tienda">
-                    </a>
-                    <p class="descripcion">DESCRIPCIÓN: Sistema que permite gestionar la información de los productos de una tienda pequeña</p>
-                    <ul class="tecnologias">TECNOLOGÍAS UTILIZADAS:
-                        <li class="tecnologia_item">Python</li>
-                        <li  class="tecnologia_item">Visual Studio Code</li>
-                        <li class="tecnologia_item">GitHub</li>
-                        <li class="tecnologia_item">Git</li>
-                    </ul>
-                </article>
-                <article class="proyecto_dos">
-                    <h2 class="subtitulo_proyecto">Proyecto 2: Gestor de colcección</h2>
-                    <a href="https://github.com/JakelinMishelQuinoMartinez/PROYECTO-1">
-                        <img class="img_proyecto" src="multimedia/Biblioteca.jpg" alt="Imagen de biblioteca">
-                    </a>
-                    <p class="descripcion">DESCRIPCIÓN: Sistema que gestiona una biblioteca de libros, películas y música, ya que permite agregar, editar o visualizar la información
-                    <ul class="tecnologias">TECNOLOGÍAS UTILIZADAS:
-                        <li class="tecnologia_item">Python</li>
-                        <li  class="tecnologia_item">Visual Studio Code</li>
-                        <li class="tecnologia_item">GitHub</li>
-                        <li class="tecnologia_item">Git</li>
-                    </ul>
-                </article>
-                <article class="proyecto_tres">
-                    <h2 class="subtitulo_proyecto">Proyecto 3: Sistema de gestión para GYM</h2>
-                    <a href="https://github.com/danielAVAR/Gimnasio-ForceTech">
-                        <img class="img_proyecto" src="multimedia/GYM.jpg" alt="Imagen de gimnasio">
-                    </a>
-                    <p class="descripcion">DESCRIPCIÓN: Sistema que permite gestionar de manera eficiente la información de clientes, servicios y operaciones internas de un gimnasio</p>
-                    <ul class="tecnologias">TECNOLOGÍAS UTILIZADAS:
-                        <li class="tecnologia_item">Python</li>
-                        <li  class="tecnologia_item">Visual Studio Code</li>
-                        <li class="tecnologia_item">GitHub</li>
-                        <li class="tecnologia_item">Git</li>
-                    </ul>
-                </article>
+  <main>
+    <!-- Inicio -->
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <p class="boot" id="boot" aria-hidden="true"></p>
+        <h1>Jakelin Mishel<br>Quino Martínez</h1>
+        <p class="typing"><span id="typed"></span><i class="cursor"></i></p>
+        <p class="lead">Técnica en Desarrollo de Software. Construyo sistemas ordenados, claros y listos para crecer, con la misma paciencia con la que se prepara un buen café.</p>
+        <div class="cta">
+          <a class="btn primary" href="#proyectos">Seguir al conejo blanco</a>
+          <a class="btn" href="#contacto">Contactarme</a>
+          <!-- Sube tu CV como multimedia/CV-Jakelin-Quino.pdf -->
+          <a class="btn" href="multimedia/CV-Jakelin-Quino.pdf" download>Descargar CV</a>
         </div>
-        </section>
+      </div>
 
-        <section id="contacto">
-            <article>
-                <h1 class="title_contacto">.✦ ݁˖ Contacto.✦ ݁˖ </h1>
-                <a href="https://www.instagram.com/quino_jaki?igsh=N285aHZmZmFodHFu" target="_blank">
-                    <img class="img_icono" src="multimedia/LogoInstagram.png" alt="Icono de instagram">
-                </a>
-                <a href="https://discord.com/users/jakelinmishelquinomartinez" target="_blank">
-                    <img class="img_icono" src="multimedia/LogoDiscord.png" alt="Icono de discord">
-                </a>
-                <a href="https://github.com/JakelinMishelQuinoMartinez" target="_blank">
-                <img class="img_icono" src="multimedia/LogoGitHub.png" alt="Icono de GitHub">
-                </a>
-                <a href="mailto:quinojakelin@gmail.com" target="_blank">
-                <img class="img_icono" src="multimedia/LogoGmail.png" alt="Icono de gmail">
-                </a>
-            </article>
-        </section>
-    </main>
+      <div class="hero-visual">
+        <!-- Espacio de la foto: multimedia/foto-perfil.jpg -->
+        <div class="foto">
+          <img src="multimedia/foto-perfil.jpg" alt="Foto de perfil de Jakelin" onerror="this.parentNode.classList.add('vacia')">
+          <span class="foto-ph">JQ</span>
+        </div>
+        <pre class="code-card" aria-hidden="true"><code><b>const</b> jaki = {
+  rol: <s>"Backend / Full Stack"</s>,
+  stack: [<s>"Node"</s>, <s>"SQL"</s>, <s>"Git"</s>],
+  cafe: <b>true</b>,
+  aprendiendo: <b>siempre</b>
+};</code></pre>
+      </div>
+    </section>
 
-    <footer class="footer">
-        <p>&copy; Portafolio de Jaki 2026. Todos los derechos reservados.</p>
-    </footer> 
+    <!-- Sobre mí -->
+    <section id="sobremi" class="seccion">
+      <h2 class="titulo">Sobre mí</h2>
+      <div class="sobre">
+        <article class="card reveal">
+          <h3>Técnico en Desarrollo de Software</h3>
+          <p>Estudiante de Programación y Criminalística, con gran entusiasmo por el aprendizaje constante. Busco mi primera oportunidad laboral en el ámbito tecnológico para aplicar mis conocimientos técnicos y aportar un perfil metódico, analítico y con alta adaptabilidad.</p>
+          <p>Me caracterizo por mi responsabilidad en el cumplimiento de mis compromisos y una actitud colaborativa orientada a resultados.</p>
+        </article>
+        <aside class="datos reveal">
+          <div class="dato"><strong>Formación</strong><span>Técnico en Desarrollo de Software</span></div>
+          <div class="dato"><strong>Estudios</strong><span>Programación y Criminalística</span></div>
+          <div class="dato"><strong>Objetivo</strong><span>Primera oportunidad laboral en tecnología</span></div>
+          <div class="dato"><strong>Ubicación</strong><span>Guatemala</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="seccion">
+      <h2 class="titulo">Habilidades</h2>
+
+      <h3 class="sub">Habilidades adaptativas</h3>
+      <ul class="chips reveal">
+        <li>Pensamiento crítico</li><li>Compromiso</li><li>Adaptabilidad</li>
+        <li>Atención al detalle</li><li>Trabajo en equipo</li><li>Liderazgo</li>
+        <li>Aprendizaje rápido</li><li>Cautela</li><li>Creatividad</li>
+        <li>Regulación emocional</li>
+      </ul>
+
+      <h3 class="sub">Habilidades técnicas</h3>
+      <!-- Filtro por estado -->
+      <div class="filtros" role="group" aria-label="Filtrar habilidades">
+        <button class="filtro activo" data-f="todas">Todas</button>
+        <button class="filtro" data-f="uso">En uso</button>
+        <button class="filtro" data-f="aprendizaje">En aprendizaje</button>
+      </div>
+
+      <div class="grupo reveal">
+        <h4>Programación</h4>
+        <div class="techs">
+          <div class="tech" data-e="uso"><i class="devicon-git-plain colored"></i><span>Git</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="devicon-github-original"></i><span>GitHub</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="devicon-html5-plain colored"></i><span>HTML</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="devicon-css3-plain colored"></i><span>CSS</span><em>En uso</em></div>
+          <div class="tech" data-e="aprendizaje"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span><em>En aprendizaje</em></div>
+          <div class="tech" data-e="aprendizaje"><i class="devicon-python-plain colored"></i><span>Python</span><em>En aprendizaje</em></div>
+          <div class="tech" data-e="uso"><i class="devicon-nodejs-plain colored"></i><span>NodeJS</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="devicon-mysql-plain colored"></i><span>MySQL</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span><em>En uso</em></div>
+        </div>
+      </div>
+
+      <div class="grupo reveal">
+        <h4>Microsoft Office</h4>
+        <div class="techs">
+          <div class="tech" data-e="uso"><i class="ico w">W</i><span>Word</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="ico x">X</i><span>Excel</span><em>En uso</em></div>
+          <div class="tech" data-e="uso"><i class="ico p">P</i><span>PowerPoint</span><em>En uso</em></div>
+        </div>
+      </div>
+
+      <div class="grupo reveal">
+        <h4>Idiomas</h4>
+        <div class="techs">
+          <div class="tech" data-e="uso"><i class="ico g">EN</i><span>Inglés</span><em>En uso</em></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos y experiencia -->
+    <section id="proyectos" class="seccion">
+      <h2 class="titulo">Proyectos</h2>
+      <div class="linea">
+        <article class="proyecto reveal">
+          <span class="estado">En curso</span>
+          <h3>Organización Mundial de la Salud (OMS)</h3>
+          <p class="rol">Backend · Desarrolladora backend</p>
+          <p>Diseñé e implementé APIs para la migración de bases de datos legacy hacia un modelo normalizado, gestionando tiempos de entrega, aplicando lógica de programación y colaboración entre compañeros.</p>
+        </article>
+        <article class="proyecto reveal">
+          <span class="estado">En curso</span>
+          <h3>IMEP La Paz de Dios</h3>
+          <p class="rol">Tutorías · Maestra y orientadora</p>
+          <p>Coordiné e impartí sesiones de reforzamiento pedagógico en lectura, escritura, matemáticas e inglés básico para niños y niñas de 5 a 13 años, adaptando estrategias de enseñanza con planificación, enfoque empático y versatilidad.</p>
+        </article>
+        <article class="proyecto reveal">
+          <span class="estado">En curso</span>
+          <h3>Campuslands Guatemala</h3>
+          <p class="rol">Repositorios · Desarrolladora Full Stack</p>
+          <p>Desarrollé talleres, proyectos y retos académicos que ponen a prueba mis habilidades técnicas y adaptativas: lenguajes de programación, bases de datos, control de versiones, innovación y pensamiento crítico.</p>
+          <!-- Repositorios destacados -->
+          <ul class="repos">
+            <li><a href="https://github.com/JakelinMishelQuinoMartinez/Taller-2--PY" target="_blank" rel="noopener"><i class="devicon-python-plain colored"></i><b>Administrador de inventario</b><span>Gestión de productos de una tienda pequeña</span></a></li>
+            <li><a href="https://github.com/JakelinMishelQuinoMartinez/PROYECTO-1" target="_blank" rel="noopener"><i class="devicon-python-plain colored"></i><b>Gestor de colección</b><span>Biblioteca de libros, películas y música</span></a></li>
+            <li><a href="https://github.com/danielAVAR/Gimnasio-ForceTech" target="_blank" rel="noopener"><i class="devicon-python-plain colored"></i><b>Sistema de gestión para GYM</b><span>Clientes, servicios y operaciones de un gimnasio</span></a></li>
+          </ul>
+          <a class="enlace" href="https://github.com/JakelinMishelQuinoMartinez" target="_blank" rel="noopener">Ver todos los repositorios en GitHub</a>
+        </article>
+        <article class="proyecto reveal">
+          <span class="estado fin">2026</span>
+          <h3>Campuslands Guatemala: Proyecto ALBA</h3>
+          <p class="rol">SCRUM Master</p>
+          <p>Lideré el diseño de concepto y el prototipado visual de una aplicación móvil para optimizar el seguimiento y la atención de la salud en adultos mayores en Guatemala, coordinando al equipo mediante metodologías ágiles.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="seccion">
+      <h2 class="titulo">Contacto</h2>
+      <div class="contacto reveal">
+        <p>¿Tienes una oportunidad o quieres conversar sobre tecnología? Escríbeme.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:quinojakelin@gmail.com">quinojakelin@gmail.com</a>
+          <button class="btn" id="copiar" type="button">Copiar correo</button>
+        </div>
+        <div class="redes">
+          <a href="https://www.linkedin.com/in/jakelin-quino-4a88b5349/" target="_blank" rel="noopener"><i class="devicon-linkedin-plain colored"></i>LinkedIn</a>
+          <a href="https://github.com/JakelinMishelQuinoMartinez" target="_blank" rel="noopener"><i class="devicon-github-original"></i>GitHub</a>
+          <a href="https://discord.com/users/jakelinmishelquinomartinez" target="_blank" rel="noopener"><i class="devicon-discordjs-plain colored"></i>Discord</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="anio">2026</span> Jakelin Mishel Quino Martínez</p>
+    <p class="guino">No existe la cuchara, solo código limpio.</p>
+  </footer>
+
+  <button class="subir" id="subir" aria-label="Volver al inicio">↑</button>
+  <div class="toast" id="toast" role="status">Correo copiado</div>
+  <script src="script.js"></script>
 </body>
 </html>
