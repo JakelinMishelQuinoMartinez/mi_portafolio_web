@@ -30,7 +30,7 @@ escribirTexto(boot, 'Despierta, Jaki...', 70, () =>
   setTimeout(() => escribirTexto(boot, 'Bienvenido a mi portafolio.', 45), 900));
 
 // Efecto de escritura con los roles
-const frases = ['Desarrolladora Backend', 'Desarrolladora Full Stack', 'SCRUM Master', 'Docente y orientadora'];
+const frases = ['Desarrolladora Backend', 'Desarrolladora Full Stack', 'GIT Manager'];
 const typed = $('#typed');
 let f = 0, c = 0, borrando = false;
 function ciclo() {
