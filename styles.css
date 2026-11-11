@@ -36,6 +36,14 @@
     content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
     background: radial-gradient(520px circle at var(--mx, 70%) var(--my, 20%), color-mix(in srgb, var(--neon) 9%, transparent), transparent 70%);
   }
+  /* Lluvia de caracteres en los bordes: se desvanece hacia el centro para no tocar el contenido */
+  .matrix-rain {
+    position: fixed; inset: 0; width: 100%; height: 100%;
+    z-index: 0; pointer-events: none; opacity: .85;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 4%, transparent 20%, transparent 80%, #000 96%, #000 100%);
+    mask-image: linear-gradient(90deg, #000 0, #000 4%, transparent 20%, transparent 80%, #000 96%, #000 100%);
+  }
+  [data-theme="light"] .matrix-rain { opacity: .32; }
   /* Líneas de pantalla CRT muy tenues */
   body::after {
     content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;

@@ -117,6 +117,105 @@ addEventListener('pointermove', e => {
   root.style.setProperty('--my', e.clientY + 'px');
 });
 
+// Lluvia de caracteres estilo Matrix en los dos bordes.
+// El CSS se encarga de desvanecerla hacia el centro, así el contenido queda limpio.
+(() => {
+  const lienzo = $('#matrix');
+  if (!lienzo) return;
+  const ctx = lienzo.getContext('2d');
+  const GLIFOS = '01000100 01101001 01101111 01110011 00100000 01110100 01100101 00100000 01100001 01101101 01100001';
+  const TAM = 15;        // alto de cada glifo
+  const PASO = TAM * 1.2;
+  const ZONA = 0.2;      // ancho que ocupa cada borde
+  const ESTELA = 14;     // glifos que deja cada columna
+  const menosMovimiento = matchMedia('(prefers-reduced-motion: reduce)');
+
+  let ancho = 0, alto = 0, columnas = [], cuerpo = '#3dff8f', cabeza = '#f1ead9';
+  let ultimo = 0, raf = 0;
+
+  const glifo = () => GLIFOS[Math.floor(Math.random() * GLIFOS.length)];
+
+  const leerColores = () => {
+    const estilos = getComputedStyle(root);
+    cuerpo = estilos.getPropertyValue('--neon').trim() || '#3dff8f';
+    cabeza = estilos.getPropertyValue('--crema').trim() || '#f1ead9';
+  };
+
+  const nuevaColumna = (x, y) => ({
+    x,
+    y: y ?? -Math.random() * alto,
+    vel: 45 + Math.random() * 110,
+    glifos: Array.from({ length: ESTELA }, glifo)
+  });
+
+  function medir() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    ancho = innerWidth;
+    alto = innerHeight;
+    lienzo.width = Math.round(ancho * dpr);
+    lienzo.height = Math.round(alto * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.font = `700 ${TAM}px "JetBrains Mono", monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+
+    const porLado = Math.max(3, Math.floor((ancho * ZONA) / PASO));
+    const inicioDerecha = ancho - porLado * PASO;
+    columnas = [];
+    for (let i = 0; i < porLado; i++) {
+      columnas.push(nuevaColumna(i * PASO + PASO / 2));
+      columnas.push(nuevaColumna(inicioDerecha + i * PASO + PASO / 2));
+    }
+  }
+
+  function pintar(dt) {
+    ctx.clearRect(0, 0, ancho, alto);
+    for (const col of columnas) {
+      col.y += col.vel * dt;
+      if (col.y - ESTELA * PASO > alto) {
+        col.y = -Math.random() * alto * 0.4;
+        col.vel = 26 + Math.random() * 60;
+      }
+      for (let k = 0; k < ESTELA; k++) {
+        const y = col.y - k * PASO;
+        if (y < -TAM || y > alto) continue;
+        if (Math.random() < 0.015) col.glifos[k] = glifo();
+        ctx.globalAlpha = k === 0 ? 1 : (1 - k / ESTELA) * 0.72;
+        ctx.fillStyle = k === 0 ? cabeza : cuerpo;
+        ctx.fillText(col.glifos[k], col.x, y);
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function animar(ts) {
+    raf = requestAnimationFrame(animar);
+    if (document.hidden) { ultimo = ts; return; }
+    const dt = Math.min((ts - (ultimo || ts)) / 1000, 0.05);
+    ultimo = ts;
+    pintar(dt);
+  }
+
+  function iniciar() {
+    leerColores();
+    medir();
+    cancelAnimationFrame(raf);
+    if (menosMovimiento.matches) {
+      // Sin animación: un solo cuadro estático
+      columnas.forEach(col => { col.y = Math.random() * alto; });
+      pintar(0);
+      return;
+    }
+    ultimo = 0;
+    raf = requestAnimationFrame(animar);
+  }
+
+  addEventListener('resize', iniciar, { passive: true });
+  menosMovimiento.addEventListener('change', iniciar);
+  new MutationObserver(leerColores).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  iniciar();
+})();
+
 // Copiar correo al portapapeles
 $('#copiar').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText('quinojakelin@gmail.com'); } catch {}
