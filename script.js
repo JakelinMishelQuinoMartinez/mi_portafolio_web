@@ -54,12 +54,15 @@ const observador = new IntersectionObserver(entradas => {
 }, { threshold: 0.15 });
 $$('.reveal').forEach(el => observador.observe(el));
 
-// Filtro de habilidades por estado
+// Filtro de habilidades técnicas por categoría
 $$('.filtro').forEach(btn => btn.addEventListener('click', () => {
-  $$('.filtro').forEach(b => b.classList.toggle('activo', b === btn));
-  $$('.tech').forEach(t => t.classList.toggle('oculta', btn.dataset.f !== 'todas' && t.dataset.e !== btn.dataset.f));
-  // Oculta grupos que quedan vacíos
-  $$('.grupo').forEach(g => g.style.display = $$('.tech:not(.oculta)', g).length ? '' : 'none');
+  const categoria = btn.dataset.cat;
+  $$('.filtro').forEach(b => {
+    const activo = b === btn;
+    b.classList.toggle('activo', activo);
+    b.setAttribute('aria-pressed', activo);
+  });
+  $$('.grupo').forEach(g => g.classList.toggle('oculto', categoria !== 'todas' && g.dataset.cat !== categoria));
 }));
 
 // Resalta el enlace activo según la sección visible
