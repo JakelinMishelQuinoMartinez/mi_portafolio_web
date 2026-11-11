@@ -22,11 +22,12 @@
     <!-- Cambiar entre modo oscuro y claro -->
     <button class="icon-btn" id="tema" aria-label="Cambiar tema">☀</button>
     <button class="menu-btn" id="menu" aria-label="Abrir menú">☰</button>
-    <nav class="nav" id="nav" aria-label="Principal">
+    <nav class="nav" id="nav" aria-label="Secciones del portafolio">
       <a href="#inicio">Inicio</a>
       <a href="#sobremi">Sobre mí</a>
       <a href="#habilidades">Habilidades</a>
-      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#formacion">Formación</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -90,6 +91,7 @@
         <li><strong>Empatía</strong><span>Escucho y comprendo necesidades.</span></li>
         <li><strong>Proactividad</strong><span>Anticipo cambios y propongo mejoras.</span></li>
         <li><strong>Adaptabilidad</strong><span>Reacciono con flexibilidad mental.</span></li>
+        <li><strong>Paciencia</strong><span>Persisto con firmeza frente a los retos sin perder el enfoque.</span></li>
       </ul>
 
       <h3 class="sub">Habilidades técnicas</h3>
@@ -104,18 +106,17 @@
         <button class="filtro" type="button" data-cat="idiomas" aria-pressed="false">Idiomas</button>
       </div>
 
-      <div class="grupos reveal">
-        <article class="grupo" data-cat="bd">
+      <div class="grupos">
+        <article class="grupo reveal" data-cat="bd">
           <h4><span aria-hidden="true">#</span> Base de datos</h4>
           <ul class="techs">
             <li class="tech"><i class="devicon-mysql-plain colored" aria-hidden="true"></i><span>MySQL</span></li>
             <li class="tech"><i class="devicon-postgresql-plain colored" aria-hidden="true"></i><span>PostgreSQL</span></li>
             <li class="tech"><i class="devicon-firebase-plain colored" aria-hidden="true"></i><span>Firebase</span></li>
-            <li class="tech"><i class="devicon-redis-plain colored" aria-hidden="true"></i><span>Redis</span></li>
           </ul>
         </article>
 
-        <article class="grupo" data-cat="back">
+        <article class="grupo reveal" data-cat="back">
           <h4><span aria-hidden="true">#</span> Backend</h4>
           <ul class="techs">
             <li class="tech"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i><span>Node.js</span></li>
@@ -123,7 +124,7 @@
           </ul>
         </article>
 
-        <article class="grupo" data-cat="front">
+        <article class="grupo reveal" data-cat="front">
           <h4><span aria-hidden="true">#</span> Frontend</h4>
           <ul class="techs">
             <li class="tech"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></li>
@@ -132,7 +133,7 @@
           </ul>
         </article>
 
-        <article class="grupo" data-cat="tools">
+        <article class="grupo reveal" data-cat="tools">
           <h4><span aria-hidden="true">#</span> Herramientas</h4>
           <ul class="techs">
             <li class="tech"><i class="devicon-vscode-plain colored" aria-hidden="true"></i><span>VS Code</span></li>
@@ -145,7 +146,7 @@
           </ul>
         </article>
 
-        <article class="grupo" data-cat="fw">
+        <article class="grupo reveal" data-cat="fw">
           <h4><span aria-hidden="true">#</span> Frameworks y librerías</h4>
           <ul class="techs">
             <li class="tech"><i class="devicon-react-original colored" aria-hidden="true"></i><span>React</span></li>
@@ -154,7 +155,7 @@
           </ul>
         </article>
 
-        <article class="grupo" data-cat="idiomas">
+        <article class="grupo reveal" data-cat="idiomas">
           <h4><span aria-hidden="true">#</span> Idiomas</h4>
           <ul class="techs">
             <li class="tech"><i class="ico g" aria-hidden="true">EN</i><span>Inglés Intermedio</span></li>
@@ -164,8 +165,8 @@
       </div>
     </section>
 
-    <!-- Proyectos y experiencia -->
-    <section id="proyectos" class="seccion">
+    <!-- Experiencia laboral -->
+    <section id="experiencia" class="seccion">
       <h2 class="titulo">Experiencia laboral</h2>
       <div class="linea">
         <article class="proyecto reveal">
@@ -240,7 +241,7 @@
         <div class="redes">
           <a href="https://www.linkedin.com/in/jakelin-quino-4a88b5349/" target="_blank" rel="noopener"><i class="devicon-linkedin-plain colored"></i>LinkedIn</a>
           <a href="https://github.com/JakelinMishelQuinoMartinez" target="_blank" rel="noopener"><i class="devicon-github-original"></i>GitHub</a>
-          <a href="https://discord.com/users/jakelinmishelquinomartinez" target="_blank" rel="noopener"><i class="devicon-discordjs-plain colored"></i>Discord</a>
+          <a href="https://discord.com/users/jakelinmishelquinomartinez" target="_blank" rel="noopener"><img class="social-logo" src="multimedia/discord.svg" alt="" width="20" height="20" loading="lazy">Discord</a>
         </div>
       </div>
     </section>
