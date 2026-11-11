@@ -147,13 +147,19 @@
     background: var(--card); border: 1px solid var(--borde); border-radius: 14px; transition: .3s;
   }
   .tech:hover { transform: translateY(-6px); border-color: var(--neon); box-shadow: var(--brillo); }
+  .tech.oculta { display: none; }
   .tech:hover span { color: var(--neon); }
   .tech i { font-size: 2.4rem; line-height: 1; }
   .tech span { font-weight: 600; font-size: .95rem; color: var(--texto); }
-  /* Logo de Microsoft Office (centrado como los demás iconos) */
-  .tech .office-logo { width: 40px; height: 40px; margin: 0 auto; object-fit: contain; display: block; }
-  /* Iconos de texto (idiomas) */
-  .ico { font: 700 .95rem "Inter", sans-serif !important; font-style: normal; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; color: #fff; background: #3f6b52; }
+  /* Logos de marca (Office, Bruno, n8n): centrados como los demás iconos */
+  .tech .brand-logo { width: 40px; height: 40px; margin: 0 auto; object-fit: contain; display: block; }
+  /* Glifos de línea para conceptos sin logo propio */
+  .tech .glifo { width: 40px; height: 40px; display: grid; place-items: center; }
+  .tech .glifo svg { width: 34px; height: 34px; }
+  .tech .glifo-ia { color: var(--cafe); }
+  /* Banderas de idiomas */
+  .tech .flag { width: 40px; height: 40px; display: block; border-radius: 50%; box-shadow: 0 0 0 1px var(--borde); }
+  .tech span small { display: block; margin-top: 3px; font-size: .74rem; font-weight: 500; color: var(--suave); }
   
   /* Proyectos en línea de tiempo */
   .linea { position: relative; padding-left: 34px; display: grid; gap: 22px; }

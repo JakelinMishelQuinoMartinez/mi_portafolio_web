@@ -54,15 +54,43 @@ const observador = new IntersectionObserver(entradas => {
 }, { threshold: 0.15 });
 $$('.reveal').forEach(el => observador.observe(el));
 
-// Filtro de habilidades técnicas por categoría
+// Filtro de habilidades técnicas por categoría.
+// Al elegir Backend o Frontend también se muestran los frameworks de esa área (data-also).
+const gruposHabilidades = $$('.grupo');
+const perteneceA = (item, categoria) => (item.dataset.also || '').split(' ').includes(categoria);
+
+function filtrarHabilidades(categoria) {
+  gruposHabilidades.forEach(g => {
+    const items = $$('.tech', g);
+    const esArea = g.dataset.cat === categoria;
+    const esFrameworks = g.dataset.cat === 'fw';
+
+    // Vista general o grupo propio: todo visible
+    if (categoria === 'todas' || esArea) {
+      g.classList.remove('oculto');
+      items.forEach(t => t.classList.remove('oculta'));
+      return;
+    }
+
+    // Frameworks: muestra solo los que pertenecen al área seleccionada
+    if (esFrameworks) {
+      const propios = items.filter(t => perteneceA(t, categoria));
+      g.classList.toggle('oculto', propios.length === 0);
+      items.forEach(t => t.classList.toggle('oculta', !perteneceA(t, categoria)));
+      return;
+    }
+
+    g.classList.add('oculto');
+  });
+}
+
 $$('.filtro').forEach(btn => btn.addEventListener('click', () => {
-  const categoria = btn.dataset.cat;
   $$('.filtro').forEach(b => {
     const activo = b === btn;
     b.classList.toggle('activo', activo);
     b.setAttribute('aria-pressed', activo);
   });
-  $$('.grupo').forEach(g => g.classList.toggle('oculto', categoria !== 'todas' && g.dataset.cat !== categoria));
+  filtrarHabilidades(btn.dataset.cat);
 }));
 
 // Resalta el enlace activo según la sección visible
