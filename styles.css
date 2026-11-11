@@ -119,6 +119,8 @@
   
   /* Sobre mí */
   .sobre { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+  .sobre .card p,
+  .linea .proyecto p:not(.rol) { text-align: justify; }
   .datos { display: grid; gap: 12px; }
   .dato { padding: 14px 20px; border-left: 2px solid var(--neon); background: var(--bg-2); border-radius: 0 12px 12px 0; display: grid; }
   .dato strong { font: 500 .8rem "JetBrains Mono", monospace; color: var(--cafe); }
